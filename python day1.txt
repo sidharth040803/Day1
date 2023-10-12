@@ -1,0 +1,86 @@
+
+
+
+def generate_multiplication_table(number):
+    for i in range(1, 11):
+        result = number * i
+        print(f"{number} x {i} = {result}")
+
+if __name__ == "__main__":
+    number = int(input("Enter a number: "))
+    generate_multiplication_table(number)
+
+
+//vowel and consonant counter
+def count_vowels_and_consonants(input_string):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    consonant_count = 0
+
+    for char in input_string:
+        if char.isalpha():
+            if char in vowels:
+                vowel_count += 1
+            else:
+                consonant_count += 1
+
+    print(f"Vowels: {vowel_count}")
+    print(f"Consonants: {consonant_count}")
+
+if __name__ == "__main__":
+    input_string = input("Enter a string: ")
+    count_vowels_and_consonants(input_string)
+
+//simple python calculator
+class Calculator:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+    @staticmethod
+    def subtract(x, y):
+        return x - y
+
+    @staticmethod
+    def multiply(x, y):
+        return x * y
+
+    @staticmethod
+    def divide(x, y):
+        if y == 0:
+            return "Cannot divide by zero"
+        return x / y
+
+if __name__ == "__main__":
+    calc = Calculator()
+    while True:
+        print("Options:")
+        print("Enter 'add' for addition")
+        print("Enter 'subtract' for subtraction")
+        print("Enter 'multiply' for multiplication")
+        print("Enter 'divide' for division")
+        print("Enter 'quit' to end the program")
+
+        user_input = input(": ")
+
+        if user_input == "quit":
+            break
+        elif user_input in ["add", "subtract", "multiply", "divide"]:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+
+            if user_input == "add":
+                print("Result:", calc.add(num1, num2))
+            elif user_input == "subtract":
+                print("Result:", calc.subtract(num1, num2))
+            elif user_input == "multiply":
+                print("Result:", calc.multiply(num1, num2))
+            elif user_input == "divide":
+                print("Result:", calc.divide(num1, num2))
+        else:
+            print("Invalid input. Please enter a valid option.")
+
+
